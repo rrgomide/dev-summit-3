@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "msjsdiag.debugger-for-chrome",
+    "dsznajder.es7-react-js-snippets",    
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "johnpapa.winteriscoming",
+    "vscode-icons-team.vscode-icons",
+    "aeschli.vscode-css-formatter",
+    "johnpapa.vscode-peacock",
+    "ritwickdey.liveserver",
+    "paulmolluzzo.convert-css-in-js",
+    "irongeek.vscode-env"
+  ]
+}
