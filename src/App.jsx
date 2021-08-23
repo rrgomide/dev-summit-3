@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import Color from './components/Color';
 import { apiGetAllCountries } from './api/api';
@@ -10,11 +10,21 @@ import CountryFilter from './components/CountryFilter';
 
 const COLORS = ['#e67e22', '#2ecc71', '#bdc3c7', '#34495e', '#ecf0f1', '#FFF'];
 
+function getDefaultColor() {
+  for (let i = 0; i < 10_000; i++) {
+    console.log(i);
+  }
+
+  return '#a3cb38';
+}
+
 export default function App() {
   /**
    * State para a cor de fundo
    */
-  const [backgroundColor, setBackgroundColor] = useState('#a3cb38');
+  const [backgroundColor, setBackgroundColor] = useState(() =>
+    getDefaultColor()
+  );
 
   /**
    * State para o filtro de países
@@ -56,13 +66,35 @@ export default function App() {
    * Cálculo do filtro de países a partir
    * do que foi digitado pelo usuário
    */
-  const filteredCountries = countries.filter(({ name }) => {
-    if (!countryFilter || countryFilter.length < 3) {
-      return false;
-    }
+  // const filteredCountries = countries.filter(({ name }) => {
+  //   if (!countryFilter || countryFilter.length < 3) {
+  //     return false;
+  //   }
 
-    return name.toLowerCase().includes(countryFilter);
-  });
+  //   for (let i = 0; i < 100; i++) {
+  //     console.log(i);
+  //   }
+
+  //   return name.toLowerCase().includes(countryFilter);
+  // });
+
+  /**
+   * Solução do problema da lentidão acima
+   * com useMemo
+   */
+  const filteredCountries = useMemo(() => {
+    return countries.filter(({ name }) => {
+      if (!countryFilter || countryFilter.length < 3) {
+        return false;
+      }
+
+      for (let i = 0; i < 100; i++) {
+        console.log(i);
+      }
+
+      return name.toLowerCase().includes(countryFilter);
+    });
+  }, [countries, countryFilter]);
 
   /**
    * Montando o JSX de cores

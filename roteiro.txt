@@ -1,22 +1,22 @@
 Roteiro
 =======
 
-() Subir backend e frontend
+(x) Subir backend e frontend
 
-() Navegar rapidamente pelo app
+(x) Navegar rapidamente pelo app
 
-() Fazer com que o useState de cores receba o 
+(x) Fazer com que o useState de cores receba o 
    valor através de execução de função 
 
-() Forçar lentidão no useState de cores na 
+(x) Forçar lentidão no useState de cores na 
    implementação da função 
 
-() Resolver lentidão com a técnica 
+(x) Resolver lentidão com a técnica 
    "useState lazy initialization"
 
-() Forçar lentidão no filtro de países
+(x) Forçar lentidão no filtro de países
 
-() Verificar que lentidão acontece mesmo quando efetuamos 
+(x) Verificar que lentidão acontece mesmo quando efetuamos 
    somente a troca de cores 
 
-() Mostrar solução com useMemo
+(x) Mostrar solução com useMemo
