@@ -1,11 +1,11 @@
 Roteiro
 =======
 
-() Subir backend e frontend
+(x) Subir backend e frontend
 
-() Navegar rapidamente pelo app
+(x) Navegar rapidamente pelo app
 
-() Fazer com que o useState de cores receba o 
+(x) Fazer com que o useState de cores receba o 
    valor através de execução de função 
 
 () Forçar lentidão no useState de cores na 
